@@ -128,9 +128,9 @@
   "scripts": {
     "babel": "babel components index.js --out-dir lib",
     "start": "npm run clean && nico server --watch",
-    "clean": "rm -rf _site dist",
+    "clean": "rmdir /q /s _site dist",
     "site": "npm run clean && webpack --config webpack.deploy.config.js && webpack --config webpack.antd.config.js && NODE_ENV=PRODUCTION nico build",
-    "deploy": "rm -rf node_modules && node scripts/install.js && npm run just-deploy",
+    "deploy": "rmdir /q /s node_modules && node scripts/install.js && npm run just-deploy",
     "just-deploy": "npm run site && node scripts/deploy.js",
     "lint": "npm run srclint && npm run mdlint && npm run lesshint",
     "srclint": "eslint components test index.js --ext '.js,.jsx'",
